@@ -16,6 +16,11 @@ sudo apt-get install emacs-snapshot-nox \
                      emacs-snapshot-el \
                      emacs-snapshot-common
 
+# Install rlwrap to provide libreadline features with node
+# See: http://nodejs.org/api/repl.html#repl_repl
+sudo apt-get install -y rlwrap
+
+
 # git pull and install dotfiles as well
 cd $HOME
 if [ -d ./dotfiles/ ]; then
