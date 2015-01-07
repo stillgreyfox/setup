@@ -2,7 +2,9 @@
 # Simple setup.sh for configuring new Ubuntu 14.04 LTS +
 # AWS EC2 vm instance headless system
 
-# Install nvm: node-version manager
+# Install screen
+sudo apt-get install -y screen
+
 # https://github.com/creationix/nvm
 sudo apt-get install -y git curl
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
