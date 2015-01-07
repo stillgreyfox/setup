@@ -1,34 +1,20 @@
 #!/bin/bash
-# Simple setup.sh for configuring Ubuntu 14.04 LTS EC2 instance
-# for headless setup. 
+# Simple setup.sh for configuring Ubuntu based workstation
 
-# Install nvm: node-version manager
-# https://github.com/creationix/nvm
-sudo apt-get install -y git curl
-curl https://raw.github.com/creationix/nvm/master/install.sh | sh
-
-# Load nvm and install latest production node
-source $HOME/.nvm/nvm.sh
-nvm install v0.10.12
-nvm use v0.10.12
-
-# Install jshint to allow checking of JS code within emacs
-# http://jshint.com/
-npm install -g jshint
-
-# Install rlwrap to provide libreadline features with node
-# See: http://nodejs.org/api/repl.html#repl_repl
-sudo apt-get install -y rlwrap
+# install some frequently used utlities
+sudo apt-get install  build-essential \
+                      automake autoconf cmake \
+                      ipython ipython-doc ipython-notebook \
+                      curl git subversion meld octave \
+                      gimp inkscape blender xournal
 
 # Install emacs daily snapshot
 # https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa
-sudo add-apt-repository -y ppa:ubuntu-elisp/ppa
+sudo add-apt-repository  ppa:ubuntu-elisp/ppa
 sudo apt-get -qq update
-sudo apt-get install -y emacs-snapshot-nox emacs-snapshot-el emacs-snapshot-common
-
-# Install Heroku toolbelt
-# https://toolbelt.heroku.com/debian
-wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+sudo apt-get install  emacs-snapshot-nox \
+                      emacs-snapshot-el \
+                      emacs-snapshot-common
 
 # git pull and install dotfiles as well
 cd $HOME
@@ -49,4 +35,3 @@ ln -sb dotfiles/.bashrc_custom .
 ln -sb dotfiles/.vimrc .
 ln -sf dotfiles/.emacs.d .
 ln -sf dotfiles/.vim .
-
