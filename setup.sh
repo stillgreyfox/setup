@@ -2,7 +2,7 @@
 # Simple setup.sh for configuring Ubuntu based workstation
 
 # install some frequently used utlities
-sudo apt-get install vim build-essential \
+sudo apt-get install screen vim build-essential \
                      automake autoconf cmake \
                      ipython ipython-doc ipython-notebook \
                      curl git subversion meld octave \
