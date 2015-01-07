@@ -14,6 +14,8 @@ if [ "$branch" == "" ]; then
 fi
 if [ "$branch" != "" ]; then
   git checkout $branch
+  # re-run after checkout
+  ./setup.sh
 fi
 
 # git pull and install dotfiles as well
