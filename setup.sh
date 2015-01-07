@@ -1,20 +1,6 @@
 #!/bin/bash
-# Simple setup.sh for configuring new Debian Linux system
-
-# use first argument as branch name (if present)
-branch=$1
-# no branch specified at command line
-if [ "$branch" == "" ]
-  # ask user for desired branch
-  echo "Branch was not specified, please enter branch to use:"
-  echo "'workstation' - for new local system setup"
-  echo "'ec2' - for new AWS EC2 vm instance setup"
-  echo "'' - defaults to master branch, current / minimal"
-  read branch
-fi
-if [ "$branch" != "" ]
-  git checkout $branch
-fi
+# Simple setup.sh for configuring new Ubuntu 14.04 LTS +
+# AWS EC2 vm instance headless system
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
