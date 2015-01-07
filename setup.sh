@@ -24,7 +24,7 @@ sudo apt-get install -y rlwrap
 # https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa
 sudo add-apt-repository -y ppa:ubuntu-elisp/ppa
 sudo apt-get -qq update
-sudo apt-get install -y emacs-snapshot-nox emacs-snapshot-el emacs-snapshot-common-non-dfsg
+sudo apt-get install -y emacs-snapshot-nox emacs-snapshot-el emacs-snapshot-common
 
 # Install Heroku toolbelt
 # https://toolbelt.heroku.com/debian
