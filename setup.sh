@@ -5,7 +5,7 @@
 sudo apt-get install screen vim build-essential \
                      automake autoconf cmake \
                      ipython ipython-doc ipython-notebook \
-                     curl git subversion meld octave \
+                     curl git subversion meld octave maxima \
                      gimp inkscape blender xournal
 
 # Install emacs daily snapshot
