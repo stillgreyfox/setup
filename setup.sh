@@ -5,8 +5,16 @@
 sudo apt-get install screen vim build-essential \
                      automake autoconf cmake \
                      ipython ipython-doc ipython-notebook \
+		     python-dev libblas-dev\
                      curl git subversion meld octave wxmaxima \
                      gimp inkscape blender xournal
+# these are the packages for pip and virtual env, but may be old
+#sudo apt-get install python-pip python-virtualenv
+
+# for newer versions use python's internal setuptools to get pip,
+# then use pip to get virtualenv
+sudo easy_install pip
+sudo pip install virtualenv
 
 # Install emacs daily snapshot
 # https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa
