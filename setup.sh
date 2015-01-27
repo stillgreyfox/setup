@@ -5,7 +5,7 @@
 sudo apt-get install screen vim build-essential \
                      automake autoconf cmake \
                      ipython ipython-doc ipython-notebook \
-		     python-dev libblas-dev\
+		     python-dev python-tk libblas-dev\
                      curl git subversion meld octave wxmaxima \
                      gimp inkscape blender xournal
 # these are the packages for pip and virtual env, but may be old
