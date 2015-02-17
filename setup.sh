@@ -4,6 +4,7 @@
 # install some frequently used utlities
 sudo apt-get install screen vim build-essential \
                      automake autoconf cmake \
+                     sshfs autofs \
                      ipython ipython-doc ipython-notebook \
 		     python-dev python-tk libblas-dev\
                      curl git subversion meld octave wxmaxima \
