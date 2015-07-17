@@ -4,9 +4,10 @@
 # install some frequently used utlities
 sudo apt-get install screen vim build-essential \
                      automake autoconf cmake \
+                     libffi-dev libssl-dev\
                      sshfs autofs \
                      ipython ipython-doc ipython-notebook \
-                     python-dev python-tk libblas-dev\
+                     python-setuptools python-dev python-tk libblas-dev\
                      curl git subversion meld octave wxmaxima \
                      gimp inkscape blender xournal
 # these are the packages for pip and virtual env, but may be old
@@ -15,20 +16,8 @@ sudo apt-get install screen vim build-essential \
 # for newer versions use python's internal setuptools to get pip,
 # then use pip to get virtualenv
 sudo easy_install pip
-sudo pip install virtualenv
-
-# Install emacs daily snapshot
-# https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa
-sudo add-apt-repository ppa:ubuntu-elisp/ppa
-sudo apt-get -qq update
-sudo apt-get install emacs-snapshot-nox \
-                     emacs-snapshot-el \
-                     emacs-snapshot-common
-
-# Install rlwrap to provide libreadline features with node
-# See: http://nodejs.org/api/repl.html#repl_repl
-sudo apt-get install -y rlwrap
-
+sudo -H pip install -U "requests[security]"
+sudo -H pip install -U pip virtualenv
 
 # git clone and install dotfiles as well
-./install_dotfiles.sh
+#./install_dotfiles.sh
