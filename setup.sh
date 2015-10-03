@@ -12,6 +12,12 @@ read name
 git config --global user.email "$email"
 git config --global user.name "$name"
 
+# ignore tags files globally (works with rsync due to .cvsignore)
+# this tidbit came from the python-mode readme:
+# https://github.com/tpope/vim-pathogen#faq
+git config --global core.excludesfile '~/.cvsignore'
+echo tags >> ~/.cvsignore
+
 # use first argument as branch name (if present)
 branch=$1
 # no branch specified at command line
