@@ -2,7 +2,7 @@
 # Simple setup.sh for configuring Ubuntu based workstation
 
 # main apps
-sudo apt-get install -y vim xournal meld
+sudo apt-get install -y vim vim-nox xournal meld
 # math apps
 sudo apt-get install -y octave wxmaxima
 # 2d graphics
