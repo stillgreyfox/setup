@@ -11,6 +11,6 @@ if [ -d ./dotfiles/ ]; then
 fi
 git clone https://github.com/stillgreyfox/dotfiles.git
 cd dotfiles
-get checkout $SETUP_BRANCH 
+git checkout $SETUP_BRANCH
 ./setup.sh
 cd ../setup
