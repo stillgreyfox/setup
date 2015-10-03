@@ -15,6 +15,7 @@ git config --global user.name "$name"
 # ignore tags files globally (works with rsync due to .cvsignore)
 # this tidbit came from the python-mode readme:
 # https://github.com/tpope/vim-pathogen#faq
+echo -e "Creating '.cvsignore' and setting as global excludes file (tags etc)\n"
 git config --global core.excludesfile '~/.cvsignore'
 echo tags >> ~/.cvsignore
 
