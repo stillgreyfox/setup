@@ -2,6 +2,8 @@
 # Simple setup.sh for configuring just dotfiles from setup
 
 SETUP_BRANCH=$(cd $HOME/setup && git branch | grep '\*' | sed 's/\*\ //g')
+#DOTFILES_BRANCH=$SETUP_BRANCH
+DOTFILES_BRANCH=master
 
 # git clone and install dotfiles as well
 # TODO: make this do .old.$(date...) to avoid nesting
@@ -14,7 +16,7 @@ fi
 #git clone --recursive https://github.com/stillgreyfox/dotfiles.git
 git clone https://github.com/stillgreyfox/dotfiles.git
 cd dotfiles
-git checkout $SETUP_BRANCH
+git checkout $DOTFILES_BRANCH
 git submodule update --init
 ./setup.sh
 cd ../setup
