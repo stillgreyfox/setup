@@ -2,7 +2,7 @@
 # Simple setup.sh for configuring Ubuntu based workstation
 
 # main apps
-sudo apt-get install -y vim ctags meld
+sudo apt-get install -y vim ctags meld guake
 # 2d graphics
 sudo apt-get install -y gimp inkscape
 # 3d graphics (commented due to big download)
