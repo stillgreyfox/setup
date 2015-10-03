@@ -4,7 +4,7 @@
 # main apps
 sudo apt-get install -y vim vim-nox xournal meld
 # math apps
-sudo apt-get install -y octave wxmaxima
+sudo apt-get install -y octave wxmaxima maxima-share
 # 2d graphics
 sudo apt-get install -y gimp inkscape
 # 3d graphics (commented due to big download)
