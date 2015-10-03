@@ -19,8 +19,9 @@ if [ "$branch" == "" ]; then
   # ask user for desired branch
   echo -e "Branch was not specified, please enter branch to use:\n"
 
-  echo -e "  'workstation' - for new local system setup"
+  echo -e "  'workstation' - for new local system setup for development"
   echo -e "  'ec2'         - for new AWS EC2 vm instance setup"
+  echo -e "  'cnc'         - for new local system setup for CNC machines"
   echo -e "  ''            - defaults to master branch, only does branch select\n"
   read branch
 fi
