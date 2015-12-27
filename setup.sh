@@ -29,6 +29,7 @@ if [ "$branch" == "" ]; then
   echo -e "  'workstation' - for new local system setup for development"
   echo -e "  'ec2'         - for new AWS EC2 vm instance setup"
   echo -e "  'cnc'         - for new local system setup for CNC machines"
+  echo -e "  'd8s'         - for new Debian 8 server system setup"
   echo -e "  ''            - defaults to master branch, only does branch select\n"
   read branch
 fi
