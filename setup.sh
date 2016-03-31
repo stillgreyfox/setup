@@ -64,6 +64,24 @@ else
         apt-get install -y sudo
     fi
 
+    # build utilities
+    sudo apt-get install -y build-essential autoconf automake cmake
+
+    # system utilities
+    sudo apt-get install -y screen
+    #sudo apt-get install -y sshfs autofs curl
+    #sudo apt-get install -y git subversion
+
+    # main apps
+    sudo apt-get install -y vim vim-nox ctags
+
+    # git clone and install dotfiles into the user's home directory
+    echo "Cloning and installing latest dotfiles to $HOME/dotfiles"
+    ./install_dotfiles.sh d8s
+
+    # prompt user to choose default editor (may be done done with ENV too)
+    sudo update-alternatives --config editor
+
     # enable bash-completion in global .bashrc
     printf "\n\
 # enable bash completion in interactive shells \n\
