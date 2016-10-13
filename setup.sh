@@ -11,7 +11,7 @@ sudo apt-get install -y gimp inkscape
 #sudo apt-get install -y blender
 
 # system utilities
-sudo apt-get install -y screen sshfs autofs curl git subversion
+sudo apt-get install -y screen sshfs autofs curl git subversion sqlite3
 # build utilities
 sudo apt-get install -y build-essential gfortran automake autoconf cmake
 # libraries and utils for python pip, numpy / scipy
