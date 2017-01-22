@@ -88,6 +88,9 @@ sudo apt-get install -y python-catkin-tools
 # we've finished installing the main ROS stuff
 echo -e "\nCompleted main install of ROS!\n"
 
+# add user to dialout for USB serial comms (arduino / etc)
+sudo usermod -aG dialout $USER
+
 # ask if user would like additional stuff for tutorials
 if confirm "Would you like to install additional pkgs for tutorials? [y/N]"
 then
@@ -103,6 +106,7 @@ then
     ros-indigo-rocon-qt-library \
     ros-indigo-ar-track-alvar-msgs
   """
+  sudo apt-get install -y arduino
 fi
 
 # done message
