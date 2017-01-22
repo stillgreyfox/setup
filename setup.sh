@@ -57,8 +57,12 @@ sudo apt-get install -y ros-kinetic-desktop-full
 sudo rosdep init
 rosdep update
 
+# git clone and install master dotfiles (will inject stuff into them)
+./install_dotfiles.sh
+
 # 1.6 ENV setup
-echo ". /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+echo -e "\n# ROS environment setup" >> ~/.bashrc_custom
+echo ". /opt/ros/kinetic/setup.bash" >> ~/.bashrc_custom
 . ~/.bashrc
 
 # 1.7 Getting rosinstall
@@ -67,5 +71,5 @@ sudo apt-get install -y python-rosinstall
 # Extra steps learned from youtube
 sudo apt-get install -y python-catkin-tools
 
-# git clone and install dotfiles as well
-./install_dotfiles.sh
+# done message
+echo -e "\nDone running setup!"
