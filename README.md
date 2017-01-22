@@ -1,17 +1,19 @@
 setup.git
 =========
-Clone and run this on a new workstation running Ubuntu or Debian to
-configure both the machine and your individual development environment as
-follows:
+Clone and run this on a new Ubuntu or Debian x86_64 PC to
+set it up as a Robot Operating System (ROS) Master and dev system.
 
 ```sh
 cd $HOME
-sudo apt-get install -y git-core
+sudo apt-get install -y git
 git clone https://github.com/stillgreyfox/setup.git
 ./setup/setup.sh
+email?:
+...
+name?:
+...
+branch?:
+ros_master_x86
 ```
 
-See also http://github.com/stillgreyfox/dotfiles and
-http://github.com/startup-class/dotfiles
-[Startup Engineering Video Lectures 4a/4b](https://class.coursera.org/startup-001/lecture/index)
-for more details.
+See also http://github.com/stillgreyfox/dotfiles for more details.

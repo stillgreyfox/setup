@@ -1,37 +1,71 @@
 #!/bin/bash
 # Simple setup.sh for configuring Ubuntu based workstation
 
+# update pkgs
+sudo apt-get update
+
 # main apps
 sudo apt-get install -y vim vim-nox ctags xournal meld rdesktop
-# math apps
-sudo apt-get install -y octave wxmaxima maxima-share
-# 2d graphics
-sudo apt-get install -y gimp inkscape
-# 3d graphics (commented due to big download)
-#sudo apt-get install -y blender
 
 # system utilities
 sudo apt-get install -y screen sshfs autofs curl git subversion sqlite3
-# build utilities
-sudo apt-get install -y build-essential gfortran automake autoconf cmake
-# libraries and utils for python pip, numpy / scipy
-sudo apt-get install -y libffi-dev libssl-dev libblas-dev libatlas-base-dev
-sudo apt-get install -y python-dev python-setuptools python-tk
-sudo apt-get install -y python3-dev python3-setuptools python3-tk
 
-# getting ipython stuff apt, for now, use pip+git for latest (see below)
-# notebook changed names..
-# (will figure out install later, for now package should exist)
-sudo apt-get install -y ipython ipython-doc ipython-notebook
-sudo apt-get install -y ipython3 ipython3-notebook
-sudo apt-get install -y python3-venv
-sudo apt-get install -y cookiecutter
-# for newer versions, use python's internal setuptools to get pip,
-# then use pip to get latest other stuff
-sudo easy_install -U distribute
-sudo easy_install pip
-sudo -H pip install -U 'requests[security]'
-sudo -H pip install -U pip virtualenv
+# build utilities
+sudo apt-get install -y build-essential automake autoconf cmake
+
+
+# ros install steps
+
+# 1.2 sources.list
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list'
+
+# 1.3 keys
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+# 1.4 installation
+sudo apt-get update
+# Desktop-Full Install: (Recommended) :
+#
+# ROS, rqt, rviz, robot-generic libraries,
+# 2D/3D simulators, navigation and 2D/3D perception
+sudo apt-get install -y ros-kinetic-desktop-full
+
+# ALTERNATIVELY:
+
+# Desktop Install:
+#
+# ROS, rqt, rviz, and robot-generic libraries
+#sudo apt-get install -y ros-kinetic-desktop
+
+# ROS-Base:
+#
+# (Bare Bones) ROS package, build, and communication libraries.
+# No GUI tools.
+#sudo apt-get install -y ros-kinetic-ros-base
+
+# Individual Package:
+#
+# You can also install a specific ROS package
+#(replace underscores with dashes of the package name):
+#sudo apt-get install ros-kinetic-PACKAGE
+# e.g. sudo apt-get install -y ros-kinetic-slam-gmapping
+
+# To find available packages, use:
+#apt-cache search ros-kinetic
+
+# 1.5 Init rosdep
+sudo rosdep init
+rosdep update
+
+# 1.6 ENV setup
+echo ". /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+. ~/.bashrc
+
+# 1.7 Getting rosinstall
+sudo apt-get install -y python-rosinstall
+
+# Extra steps learned from youtube
+sudo apt-get install -y python-catkin-tools
 
 # git clone and install dotfiles as well
 ./install_dotfiles.sh
