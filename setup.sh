@@ -1,6 +1,20 @@
 #!/bin/bash
 # Simple setup.sh for configuring Ubuntu based workstation
 
+# this was ripped out of bashlib
+confirm() {
+  # call with a prompt string or use a default
+  read -r -p "${1:- Are you sure? [y/N]} " response
+  case $response in
+    [yY][eE][sS] | [yY])
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
 # update pkgs
 sudo apt-get update
 
@@ -70,6 +84,26 @@ sudo apt-get install -y python-rosinstall
 
 # Extra steps learned from youtube
 sudo apt-get install -y python-catkin-tools
+
+# we've finished installing the main ROS stuff
+echo -e "\nCompleted main install of ROS!\n"
+
+# ask if user would like additional stuff for tutorials
+if confirm "Would you like to install additional pkgs for tutorials? [y/N]"
+then
+  echo "Turtlebot stuff not yet supported on 'ROS-Kinetic'"
+  """
+  sudo apt-get install -y \
+    ros-indigo-turtlebot \
+    ros-indigo-turtlebot-apps \
+    ros-indigo-turtlebot-interactions \
+    ros-indigo-turtlebot-simulator \
+    ros-indigo-kobuki-ftdi \
+    ros-indigo-rocon-remocon \
+    ros-indigo-rocon-qt-library \
+    ros-indigo-ar-track-alvar-msgs
+  """
+fi
 
 # done message
 echo -e "\nDone running setup!"
