@@ -25,7 +25,7 @@ sudo apt-get install -y vim vim-nox ctags xournal meld rdesktop
 sudo apt-get install -y screen sshfs autofs curl git subversion sqlite3
 
 # build utilities
-sudo apt-get install -y build-essential automake autoconf cmake
+sudo apt-get install -y build-essential g++ automake autoconf cmake
 
 
 # ros install steps
