@@ -4,9 +4,10 @@
 
 # let's make the user set their git information so future
 # commits will not bitch about it
-echo -e "Please enter the email you want to tell git\n"
+echo -e "Please enter the email you want to tell git"
 read email
-echo -e "Please enter the name you want to tell git\n"
+echo -e ""
+echo -e "Please enter the name you want to tell git"
 read name
 # set git config with read values
 git config --global user.email "$email"
@@ -15,7 +16,8 @@ git config --global user.name "$name"
 # ignore tags files globally (works with rsync due to .cvsignore)
 # this tidbit came from the python-mode readme:
 # https://github.com/tpope/vim-pathogen#faq
-echo -e "Creating '.cvsignore' and setting as global excludes file (tags etc)\n"
+echo -e ""
+echo -e "Creating '.cvsignore' and setting as global excludes file (tags etc)"
 git config --global core.excludesfile '~/.cvsignore'
 echo tags >> ~/.cvsignore
 
@@ -24,13 +26,11 @@ branch=$1
 # no branch specified at command line
 if [ "$branch" == "" ]; then
   # ask user for desired branch
-  echo -e "Branch was not specified, please enter branch to use:\n"
-
-  echo -e "  'workstation' - for new local system setup for development"
-  echo -e "  'ec2'         - for new AWS EC2 vm instance setup"
-  echo -e "  'cnc'         - for new local system setup for CNC machines"
-  echo -e "  'd8s'         - for new Debian 8 server system setup"
-  echo -e "  ''            - defaults to master branch, only does branch select\n"
+  echo -e ""
+  echo -e "Branch was not specified, please enter branch to use:"
+  echo $(git branch -a | tail -n +4 | cut -d'/' -f3-) | tr ' ' '\n'
+  echo -e ""
+  echo -e "Entering nothing will default to master branch\n"
   read branch
 fi
 if [ "$branch" != "" ]; then
