@@ -94,18 +94,24 @@ sudo usermod -aG dialout $USER
 # ask if user would like additional stuff for tutorials
 if confirm "Would you like to install additional pkgs for tutorials? [y/N]"
 then
-  echo "Turtlebot stuff not yet supported on 'ROS-Kinetic'"
-  """
+  sudo apt-get install -y linux-headers-generic
+  sudo sh -c 'echo "deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse
+deb-src http://security.ubuntu.com/ubuntu xenial-security main restricted" > \
+    /etc/apt/sources.list.d/official-source-repositories.list'
+  sudo apt-get update
+  sudo apt-get install -y ros-kinetic-librealsense
+  sudo apt-get install -y ros-kinetic-librealsense-camera
   sudo apt-get install -y \
-    ros-indigo-turtlebot \
+    ros-kinetic-turtlebot \
     ros-indigo-turtlebot-apps \
     ros-indigo-turtlebot-interactions \
     ros-indigo-turtlebot-simulator \
     ros-indigo-kobuki-ftdi \
-    ros-indigo-rocon-remocon \
-    ros-indigo-rocon-qt-library \
     ros-indigo-ar-track-alvar-msgs
-  """
+    # ros-indigo-rocon-remocon \ -- THIS ONE NOT AVAILABLE in KINETIC!?
+    # ros-indigo-rocon-qt-library \ -- THIS ONE NOT AVAILABLE in KINETIC!?
   sudo apt-get install -y arduino
 fi
 
