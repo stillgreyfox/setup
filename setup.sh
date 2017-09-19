@@ -17,7 +17,11 @@ sudo apt-get install -y screen sshfs autofs curl git subversion sqlite3
 sudo apt-get install -y build-essential g++ automake autoconf cmake
 
 # python stuff
-curl https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh | bash
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod u+x Miniconda3-latest-Linux-x86_64.sh
+./Miniconda3-latest-Linux-x86_64.sh
 
 # pull down dotfiles from github
 ./install_dotfiles.sh
+
+echo "export PATH=/home/osboxes/miniconda3/bin:$PATH" >> ~/.bashrc_custom
