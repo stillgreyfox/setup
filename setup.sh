@@ -12,26 +12,12 @@ sudo apt-get install -y gimp inkscape
 
 # system utilities
 sudo apt-get install -y screen sshfs autofs curl git subversion sqlite3
+
 # build utilities
-sudo apt-get install -y build-essential gfortran automake autoconf cmake
-# libraries and utils for python pip, numpy / scipy
-sudo apt-get install -y libffi-dev libssl-dev libblas-dev libatlas-base-dev
-sudo apt-get install -y python-dev python-setuptools python-tk
-sudo apt-get install -y python3-dev python3-setuptools python3-tk
+sudo apt-get install -y build-essential g++ automake autoconf cmake
 
-# getting ipython stuff apt, for now, use pip+git for latest (see below)
-# notebook changed names..
-# (will figure out install later, for now package should exist)
-sudo apt-get install -y ipython ipython-doc ipython-notebook
-sudo apt-get install -y ipython3 ipython3-notebook
-sudo apt-get install -y python3-venv
-sudo apt-get install -y cookiecutter
-# for newer versions, use python's internal setuptools to get pip,
-# then use pip to get latest other stuff
-sudo easy_install -U distribute
-sudo easy_install pip
-sudo -H pip install -U 'requests[security]'
-sudo -H pip install -U pip virtualenv
+# python stuff
+curl https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh | bash
 
-# git clone and install dotfiles as well
+# pull down dotfiles from github
 ./install_dotfiles.sh
