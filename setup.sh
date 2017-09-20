@@ -12,6 +12,7 @@ read name
 # set git config with read values
 git config --global user.email "$email"
 git config --global user.name "$name"
+git config --global help.autocorrect 1
 
 # ignore tags files globally (works with rsync due to .cvsignore)
 # this tidbit came from the python-mode readme:
