@@ -1,17 +1,24 @@
 #!/bin/bash
-# Simple setup.sh for configuring Ubuntu based workstation
+# Simple setup.sh for configuring Windows-hosted mingw environment
 
 # main apps
-sudo apt-get install -y vim vim-nox ctags meld guake
-# 2d graphics
-sudo apt-get install -y gimp inkscape
-# 3d graphics (commented due to big download)
-#sudo apt-get install -y blender
+pacman -S --needed vim # ctags  # complains about max file size download...
 
-# system utilities
-sudo apt-get install -y screen sshfs autofs curl git subversion
+# system utilities (optional)
+#pacman -S --needed curl subversion sqlite3
+
 # build utilities
-sudo apt-get install -y build-essential autoconf automake cmake
+pacman -S --needed \
+	base-devel \
+	mingw-w64-i686-toolchain \
+	mingw-w64-x86_64-toolchain \
+	mingw-w64-i686-cmake \
+	mingw-w64-x86_64-cmake \
+	python3 \
+	python3-pip
 
-# git clone and install dotfiles as well
+# python stuff
+# INSTALL Miniconda separately on Windows host
+
+# pull down dotfiles from github
 ./install_dotfiles.sh

@@ -14,7 +14,3 @@ fi
 #git clone --recursive https://github.com/stillgreyfox/dotfiles.git
 git clone https://github.com/stillgreyfox/dotfiles.git
 cd dotfiles
-git checkout $SETUP_BRANCH
-git submodule update --init
-./setup.sh
-cd ../setup
