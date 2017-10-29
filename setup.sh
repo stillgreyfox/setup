@@ -8,6 +8,8 @@ pacman -S --needed vim # ctags  # complains about max file size download...
 #pacman -S --needed curl subversion sqlite3
 
 # build utilities
+#   adapted from help here:
+#     https://github.com/orlp/dev-on-windows/wiki/Installing-GCC--&-MSYS2
 pacman -S --needed \
 	base-devel \
 	mingw-w64-i686-toolchain \
