@@ -20,5 +20,8 @@ pacman -S --needed \
 # python stuff
 # INSTALL Miniconda separately on Windows host
 
+# fix vim / vi annoyance
+cp -a /usr/bin/vim.exe /usr/bin/vi.exe
+
 # pull down dotfiles from github
 ./install_dotfiles.sh
