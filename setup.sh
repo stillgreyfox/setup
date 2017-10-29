@@ -25,5 +25,10 @@ pacman -S --needed \
 # fix vim / vi annoyance
 cp -a /usr/bin/vim.exe /usr/bin/vi.exe
 
+# create dr dirs
+mkdir -p $HOME/dr/local
+mkdir -p $HOME/dr/github
+mkdir -p $HOME/dr/bitbucket
+
 # pull down dotfiles from github
 ./install_dotfiles.sh
